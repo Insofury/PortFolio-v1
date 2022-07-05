@@ -1,0 +1,509 @@
+@keyframes moveRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-20%, -20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateX(180deg);
+    color: black;
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes rotateIcon {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 1rem;
+  }
+  .outer-wrapper {
+    .inner-wrapper {
+      .section1 {
+        .navbar {
+          transform: rotate(0deg) !important;
+          .icon {
+            margin: 0 5px !important;
+          }
+          width: 95% !important;
+          border-radius: 0 !important;
+          align-items: center !important;
+          margin: 0 5px !important;
+          .container ul li a {
+            font-size: 1rem;
+          }
+          &::after {
+            left: 45% !important;
+          }
+        }
+        .description {
+          width: 70% !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%);
+          .header--info {
+            text-align: center !important;
+            .header--info-1,
+            .header--info-2 {
+              font-size: 1.5rem !important;
+            }
+          }
+        }
+      }
+      .section2 {
+        .container {
+          max-width: 100% !important;
+          .title {
+            top: 4% !important;
+            h2 {
+              font-size: 1.3rem !important;
+            }
+          }
+          .description {
+            font-size: 0.8rem !important;
+          }
+          .skills {
+            margin-top: 10% !important;
+            .primary,
+            .secondary {
+              font-size: 0.8rem !important;
+            }
+            .secondary {
+              margin: 5px !important;
+            }
+            h2 {
+              font-size: 1.3rem !important;
+            }
+          }
+        }
+      }
+      .section3 {
+        .container .wrapper .card {
+          flex-direction: column !important;
+          justify-content: center !important;
+          svg {
+            height: 70% !important;
+          }
+        }
+      }
+      .section4 {
+        .contact {
+          .labels {
+            h2 {
+              font-size: 1.2rem !important;
+              align-items: center !important;
+              svg {
+                width: 22px !important;
+                height: 22px !important;
+              }
+            }
+          }
+          .container .handles a svg {
+            width: 60px !important;
+            height: 60px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Lato;
+}
+
+.outer-wrapper {
+  .inner-wrapper {
+    height: 100vh;
+    .section1 {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-image: url("./Files/pineapple.jpg");
+      background-attachment: fixed;
+      filter: grayscale(40%);
+      background-size: cover;
+      border-image-width: 10px;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 3% 100%);
+      .navbar {
+        display: flex;
+        border: 2px solid black;
+        box-shadow: 3px 10px 8px rgba(0, 0, 0, 0.3);
+        height: 6%;
+        border-radius: 10%;
+        width: 70%;
+        margin: 0px;
+        // opacity: 0;
+        transform: rotate(-1deg);
+        transition: ease-in-out 0.6s;
+        position: absolute;
+        top: 4%;
+        left: 1%;
+        animation: bounceDown 1s 1;
+        &::after {
+          content: "";
+          background-image: url(/Files/volleyball.png);
+          background-size: cover;
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          bottom: -50px;
+          left: 55%;
+          transition: ease-in-out 0.7s;
+        }
+        &:hover {
+          transform: rotate(0deg);
+          &::after {
+            left: 48%;
+            transform: rotate(-180deg);
+          }
+        }
+        .icon {
+          margin: 0 20px 0 20px;
+        }
+        .container {
+          ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            list-style-type: none;
+            height: 100%;
+            margin: 0;
+            li {
+              text-align: center;
+              height: 100%;
+              margin: 0 20px 0 20px;
+              transition: ease-in 0.1s;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+            a {
+              font-family: monospace;
+              font-size: 1.5rem;
+              text-decoration: none;
+              color: black;
+            }
+          }
+        }
+        .download {
+          width: 100%;
+          margin-right: 5%;
+          text-align: right;
+          a {
+            color: black;
+          }
+        }
+      }
+      .description {
+        width: 50%;
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        .header--info {
+          text-transform: uppercase;
+          font-size: 2.8rem;
+          font-weight: 900;
+          color: rgba(0, 0, 0, 0.652);
+          letter-spacing: 0.7rem;
+          .header--info-1 {
+            animation: fadeIn 1s 0.1s ease-in;
+            animation-fill-mode: backwards;
+          }
+          .header--info-2 {
+            display: inline-block;
+            animation: moveRight 1s 0.2s ease-in;
+            animation-fill-mode: backwards;
+          }
+          #header--info-1__dev {
+            color: black;
+            font-size: 4rem;
+            animation-fill-mode: backwards;
+          }
+        }
+      }
+      .ball {
+        background-image: url("/Files/volleyball.png");
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 10%;
+        left: 34%;
+      }
+    }
+    .section2 {
+      height: 100%;
+      margin: 20px 20px 0 20px;
+      padding-top: 50px;
+
+      .container {
+        position: relative;
+        height: 90%;
+        max-width: 80%;
+        border: solid 3px #6e7491;
+        border-top-left-radius: 37px 140px;
+        border-top-right-radius: 23px 130px;
+        border-bottom-left-radius: 110px 19px;
+        border-bottom-right-radius: 120px 24px;
+        line-height: 30px;
+        transform: rotate(-1deg);
+        box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+        transition: ease-in-out 0.6s;
+
+        .title {
+          position: absolute;
+          top: 10%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          text-transform: uppercase;
+          h2 {
+            font-family: monospace;
+            font-size: 2.3rem;
+            font-weight: 900;
+          }
+        }
+        .description {
+          width: 100%;
+          padding: 40px;
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: left;
+          font-family: monospace;
+          letter-spacing: 1.5px;
+          font-size: 1.3rem;
+          #pen {
+            transition: ease-in-out 0.6s;
+          }
+        }
+        .skills {
+          width: 100%;
+          height: 40%;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          h2 {
+            text-transform: uppercase;
+            text-align: center;
+            font-family: monospace;
+            font-size: 2.3rem;
+            font-weight: 900;
+          }
+
+          .primary,
+          .secondary {
+            .label {
+              font-family: monospace;
+              font-size: 1.2rem;
+              font-weight: bolder;
+            }
+            letter-spacing: 2px;
+            margin: 30px !important;
+          }
+        }
+      }
+
+      .container:hover {
+        transform: translateY(-10px) rotate(1deg);
+        #pen {
+          transform: rotate(360deg);
+        }
+
+        box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+      }
+    }
+    .section3 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .title {
+        float: right;
+        // border: 2px solid #6e7491;
+        background-image: url("/Files/max-fuchs-Nm6ojlDO-5c-unsplash.jpg");
+
+        border-radius: 20% 5%;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        height: 7%;
+        margin: 4% 0 0 7%;
+        padding-right: 10%;
+        h2 {
+          text-align: end;
+          font-family: monospace;
+          font-size: 2.3rem;
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+      }
+      .string {
+        margin: 0 20% 0 20%;
+        height: 20%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("/Files/153613.svg");
+      }
+      .container {
+        height: 55%;
+        margin: 0 40px 0 40px;
+        background-image: url("/Files/max-fuchs-Nm6ojlDO-5c-unsplash.jpg");
+        background-size: cover;
+        box-shadow: 5px 15px 8px -10px rgba(0, 0, 0, 0.3);
+        border-radius: 5% 0%;
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          .card {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .label {
+              li {
+                font-size: 1.5rem;
+              }
+              h2,
+              h5 {
+                font-family: monospace;
+                text-transform: uppercase;
+              }
+              h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+              }
+              margin-right: 50px;
+            }
+            svg {
+              transition: ease-in 0.3s;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+    .section4 {
+      width: 100%;
+      height: 100%;
+      background-image: url(./Files/amy-humphries-2M_sDJ_agvs-unsplash.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      // background-position: 0% -70%;
+      clip-path: polygon(3% 5%, 100% 0%, 100% 100%, 0% 100%);
+      filter: grayscale(55%);
+      .contact {
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        position: relative;
+        color: black;
+        .labels {
+          position: absolute;
+          top: 20%;
+          left: 50%;
+          width: 60%;
+          transform: translate(-50%, -50%);
+          margin-top: 20px;
+          background-color: black;
+          h2 {
+            color: aliceblue;
+            text-align: center;
+            font-family: monospace;
+            text-transform: uppercase;
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+          }
+        }
+        .container {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          .handles {
+            transition: ease-in-out 0.2s;
+            a {
+              color: white;
+            }
+            &:hover {
+              transform: scale(1.4);
+            }
+            &.linkedin {
+              a:active,
+              a:visited {
+                color: #170bf7;
+              }
+            }
+            &.mail {
+              a:active,
+              a:visited {
+                color: rgb(255, 204, 0);
+              }
+            }
+            &.github {
+              a:active,
+              a:visited {
+                color: rgb(22, 22, 22);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .reveal {
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 0.8s all ease;
+  }
+  .reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
